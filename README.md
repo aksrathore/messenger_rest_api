@@ -68,4 +68,4 @@ Each comment can be accessed by the URI :
 http://localhost:8080/messenger_rest_api/restapi/profiles/{profileName}/messages/{messageId}/comments/{commentId}
 
 NOTE : 	Here AUTHOR can be only those who have profile(having profileName).
-		The sql scripts for creating table is kept at src/resources/sqlscripts in the project folder. I have not created table for sake of simplicity.
+		The sql scripts for creating table is kept at src/resources/sqlscripts in the project folder. I have not created table with the help of a java program for the sake of simplicity.
