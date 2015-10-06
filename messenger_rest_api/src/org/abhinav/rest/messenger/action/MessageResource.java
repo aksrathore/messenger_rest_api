@@ -13,7 +13,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.abhinav.rest.messenger.model.Message;
-//import org.abhinav.rest.messenger.resources.beans.MessageFilterBean;
 import org.abhinav.rest.messenger.service.MessageService;
 
 @Consumes(MediaType.APPLICATION_JSON)
@@ -24,15 +23,13 @@ public class MessageResource {
 
 	@GET
 	public List<Message> getMessages(
-			@PathParam("profileName") String profileName) { // ,@BeanParam
-															// MessageFilterBean
-															// filterBean) {
-		return messageService.getAllMessages(profileName);
+			@PathParam("profileName") String profileName) {
+				return messageService.getAllMessages(profileName);
 	}
 
 	@POST
 	public Message addMessage(@PathParam("profileName") String profileName,
-			Message message) { // , @Context UriInfo uriInfo) {
+			Message message) {
 		message.setProfileName(profileName);
 		return messageService.addMessage(message);
 	}
@@ -40,7 +37,7 @@ public class MessageResource {
 	@GET
 	@Path("/{messageId}")
 	public Message getMessage(@PathParam("profileName") String profileName,
-			@PathParam("messageId") long id) {// , @Context UriInfo uriInfo) {
+			@PathParam("messageId") long id) {
 		Message message = messageService.getMessage(profileName, id);
 		return message;
 
